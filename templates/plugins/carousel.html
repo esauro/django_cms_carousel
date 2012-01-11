@@ -1,0 +1,36 @@
+{% load sekizai_tags %}
+
+{% addtoblock "css" %}
+<link href="/static/css/coda-slider-2.0.css" media="screen" rel="stylesheet" type="text/css" />
+{% endaddtoblock %}
+
+<div id="carousel{{object.name}}">
+<div class="coda-slider-wrapper">
+<div class="coda-slider preload" id="carousel-{{object.name}}">
+{% for tab in tabs %}
+    <div class="panel"><div class="panel-wrapper"><div class="center">
+        <img src="{{ tab.image.url }}" />
+        <h2>{{tab.titleOne}}</h2>
+        <h3>{{tab.titleTwo}}</h3>
+        <h4>{{tab.titleThree}}</h4>
+        <h5>{{tab.titleFour}}</h5>
+        <p>{{ tab.content|safe }}</p>
+    </div></div></div>
+{% endfor %}
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+    $().ready(function() {
+        $('#carousel-{{object.name}}').codaSlider({
+            autoSlide: true,
+            autoSlideInterval: 8000,
+            autoSlideStopWhenClicked: true,
+            autoHeight: false,
+            dynamicArrowLeftText: "&#171;",
+            dynamicArrowRightText: "&#187;",
+            dynamicTabs: false         
+        });	
+    });
+</script>

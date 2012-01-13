@@ -1,7 +1,7 @@
 from django.db import models
 from cms.models import CMSPlugin
 from django.conf import settings
-from tinymce import models as tinymce_models
+#from tinymce import models as tinymce_models
 from django.utils.translation import ugettext_lazy as _, get_language, ugettext
 
 # Create your models here.

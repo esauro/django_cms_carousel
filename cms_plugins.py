@@ -27,7 +27,7 @@ class CarouselTabInline(admin.StackedInline):
     
     CarouselTabForm.declared_fields["content"] = CharField(widget=widget, required=False)
     form = CarouselTabForm
-    extra = 1
+    extra = 0
         
 
 class CMSCarouselPlugin(CMSPluginBase):
@@ -37,11 +37,11 @@ class CMSCarouselPlugin(CMSPluginBase):
     render_template = here("templates/plugins/carousel.html")
     inlines = [CarouselTabInline]
     
-    class PluginMedia:
-        js = ('https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js',
-              '/static/js/jquery.easing.1.3.js',
-              '/static/js/jquery.coda-slider-2.0.js',
-              )
+    #class PluginMedia:
+    #    js = ('https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js',
+    #          '/static/js/jquery.easing.1.3.js',
+    #          '/static/js/jquery.coda-slider-2.0.js',
+    #          )
    
     
     def render(self, context, instance, placeholder):

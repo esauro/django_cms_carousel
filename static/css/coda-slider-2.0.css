@@ -1,0 +1,81 @@
+/*
+	jQuery Coda-Slider v2.0 - http://www.ndoherty.biz/coda-slider
+	Copyright (c) 2009 Niall Doherty
+	This plugin available for use in all personal or commercial projects under both MIT and GPL licenses.
+*/
+
+/* Most common stuff you'll need to change */
+
+.coda-slider-wrapper { padding: 0px 0 }
+.coda-slider { background-color: #EAD05F;}
+
+/* Use this to keep the slider content contained in a box even when JavaScript is disabled */
+.coda-slider-no-js .coda-slider { height: 200px; overflow: auto !important; padding-right: 20px }
+
+.coda-slider-wrapper.arrows .coda-slider { margin: 0 0px }
+
+/* Arrow styling */
+.coda-nav-left a, .coda-nav-right a { color: #fff; padding: 5px; width: 20px }
+
+/* Tab nav */
+.coda-nav ul li a.current { background-color: #39c }
+
+/* Panel padding */
+/*.coda-slider .panel-wrapper {padding: 20px	}*/
+
+/* Preloader */
+.coda-slider p.loading { padding: 20px; text-align: center }
+
+/* Don't change anything below here unless you know what you're doing */
+/*____________________________________________________________________*/
+/* Tabbed nav */
+.coda-nav{
+		margin: 0 auto;
+		position: absolute;
+		width: 100%;
+		z-index: 1500;
+	
+}
+.coda-nav ul { clear: both; display: block; margin: auto; overflow: hidden }
+.coda-nav ul li { display: inline }
+.coda-nav ul li a { background: #000; color: #fff; display: block; float: left; margin-right: 1px; padding: 6px 6px; text-decoration: none }
+
+/* Miscellaneous */
+.coda-slider-wrapper { clear: both; overflow: hidden }
+.coda-slider { float: left; overflow: hidden; position: relative; z-index:500; }
+.coda-slider .panel { display: block; float: left }
+.coda-slider .panel-container { position: relative }
+.coda-nav-left, .coda-nav-right {
+	position:absolute;
+	margin-top:190px;
+	z-index:1500;
+	font-size:2em;
+		height:1em;
+		line-height:1em;
+	}
+.coda-nav-left{
+	left:0;}
+.coda-nav-right {
+	right:0;}
+.coda-nav-left a, .coda-nav-right a {
+	margin-top:-0.3em;
+	display: block; text-align: center; text-decoration: none }
+/*____________________________________________________________________*/
+
+/*per project configuration */
+	/* Change the width of the entire slider (without dynamic arrows) */
+	.coda-slider, .coda-slider .panel {
+		width: 950px;
+		} 
+	
+	/* Change margin and width of the slider (with dynamic arrows) */
+	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel{
+        width: 950px ;
+        }
+	.coda-slider{
+		height:250px;
+	}
+	.coda-nav-left:hover, .coda-nav-right:hover	{
+		background-color:#aaa;
+	
+	}

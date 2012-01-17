@@ -33,16 +33,8 @@ class CarouselTabInline(admin.StackedInline):
 class CMSCarouselPlugin(CMSPluginBase):
     model = CarouselPlugin
     name = "CarouselPlugin"
-    #change_form_template = 'admin/includes/fieldset.html' 
     render_template = here("templates/plugins/carousel.html")
     inlines = [CarouselTabInline]
-    
-    #class PluginMedia:
-    #    js = ('https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js',
-    #          '/static/js/jquery.easing.1.3.js',
-    #          '/static/js/jquery.coda-slider-2.0.js',
-    #          )
-   
     
     def render(self, context, instance, placeholder):
         tabs = instance.carouseltab_set.all()

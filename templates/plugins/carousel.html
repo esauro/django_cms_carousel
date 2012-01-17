@@ -21,7 +21,7 @@
     <div class="panel">
     <div class="panel-wrapper">
     <div class="center">
-        <img src="{{ tab.image.url }}" />
+        <img alt="{{ tab.image.url }}" src="{{ tab.image.url }}" />
         <div class="panel-info">
             <h2>{{tab.titleOne}}</h2>
             <h3>{{tab.titleTwo}}</h3>
@@ -43,7 +43,7 @@
             autoSlide: true,
             autoSlideInterval: 8000,
             autoSlideStopWhenClicked: true,
-            autoHeight: true,
+            autoHeight: false,
             dynamicArrowLeftText: "&#171;",
             dynamicArrowRightText: "&#187;",
             dynamicTabs: false         

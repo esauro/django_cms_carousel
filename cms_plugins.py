@@ -17,7 +17,6 @@ here = lambda x: os.path.join(os.path.abspath(os.path.dirname(__file__)), x)
 
 class CarouselTabInline(admin.StackedInline):
     model = CarouselTab
-    form = CarouselTabForm
     
     if USE_TINYMCE and "tinymce" in settings.INSTALLED_APPS:
         from cms.plugins.text.widgets.tinymce_widget import TinyMCEEditor
@@ -31,11 +30,11 @@ class CarouselTabInline(admin.StackedInline):
 
 class CMSCarouselPlugin(CMSPluginBase):
     model = CarouselPlugin
-    name = "CarouselPlugin"
-    #change_form_template = 'admin/includes/fieldset.html' 
-    render_template = here("templates/plugins/carousel.html")
+    name = "Carousel Plugin"
+    render_template = here("templates/plugins/anythingsliders.html")
+    #render_template = here("templates/plugins/tabtoolslide.html")
     inlines = [CarouselTabInline]
-   
+    
     def render(self, context, instance, placeholder):
         tabs = instance.carouseltab_set.all()
         context.update({

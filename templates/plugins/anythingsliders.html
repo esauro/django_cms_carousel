@@ -1,0 +1,65 @@
+{% load sekizai_tags %}
+
+
+{% addtoblock "js" %}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+{% endaddtoblock %}
+
+{% addtoblock "css" %}
+<link href="{{ STATIC_URL }}css/anythingslider.css" media="screen" rel="stylesheet" type="text/css" />
+{% endaddtoblock %}
+
+{% addtoblock "ie7" %}
+<link href="{{ STATIC_URL }}css/anythingslider-ie.css" media="screen" rel="stylesheet" type="text/css" />
+{% endaddtoblock %}
+
+{% addtoblock "js" %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.easing.1.3.js"></script>
+{% endaddtoblock %}
+{% addtoblock "js" %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.anythingslider.min.js"></script>
+{% endaddtoblock %}
+{% addtoblock "js" %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.anythingslider.fx.min.js"></script>
+{% endaddtoblock %}
+
+
+
+<!-- container for the slides -->
+
+<!--<div id='nav-slide' class="span-18 last" ></div>-->
+<div id="slide-wrapper" class="last">
+<div id="slider_one">
+   {% for tab in tabs %}
+      <div class="slide">
+           <img src="{{ tab.image.url }}" />
+           <div class="slide-info">
+                   <h2>{{tab.title}}</h2>
+                   <p>{{ tab.content|safe }}</p>
+           </div>
+       </div>  
+   {% endfor  %}
+</div>
+</div>
+
+{% addtoblock "js" %}
+<script type="text/javascript">
+   $(document).ready(function(){
+      $('#slider_one').anythingSlider({
+               expand: true,
+               autoPlay:true,
+               resizeContents: false,
+               startText : "Start",
+               stopText : "Stop",
+               //theme : 'minimalist-square',
+               buildArrows: false,
+               buildNavigation: false,
+               buildStartStop: false,
+               startStopped: false,
+               animationTime : 2000, 
+               delay : 5000,
+               easing : "easeInOutExpo"
+        });
+   });
+</script>
+{% endaddtoblock %}

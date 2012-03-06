@@ -32,7 +32,6 @@ class CMSCarouselPlugin(CMSPluginBase):
     model = CarouselPlugin
     name = "Carousel Plugin"
     render_template = here("templates/plugins/anythingsliders.html")
-    #render_template = here("templates/plugins/tabtoolslide.html")
     inlines = [CarouselTabInline]
     
     def render(self, context, instance, placeholder):

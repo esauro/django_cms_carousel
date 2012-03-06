@@ -1,0 +1,31 @@
+===================
+django-cms-carousel beta
+===================
+
+A anything slider integration for django-cms
+
+(http://css-tricks.com/anythingslider-jquery-plugin/)
+
+
+FEATURES:
+
+* sortable tab (admin)
+
+
+USAGE:
+
+* put 'django-cms-carousel' in INSTALLED-APPS in your settings.py
+* run 'python managed.py syncdb'
+* edit a page and ad a 'Carousel Plugin'
+* write some css to customise your slideshow
+
+
+TODO / KNOWS ISSUE :
+
+* 'content' is not display yet
+* put some skin control in admin panel : size, duration, ...
+
+ 
+
+
+	

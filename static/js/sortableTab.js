@@ -15,10 +15,16 @@ jQuery(function($) {
     $('div.inline-related h3').css('cursor', 'move');
     $('div.inline-related').find('fieldset').hide();
     
+    
     $('div.inline-related h3').prepend('<span style="color:#AAA;">Glisser pour trier </span>');
     
     $('div.inline-related h3').append('<span name="edit" style="color:#AAA;">Cliquez pour éditer </span>');
     
+    
+    $('div.inline-related').last().find('fieldset').show();
+    
+    
+    $('div.inline-related').find('input[id$=order]').parent('div').hide();
     $('div.inline-related').find('input[id$=order]').parent('div').hide();
     $('div.inline-related h3 ').find('span[name$=edit]').click(
         function(){

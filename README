@@ -20,12 +20,15 @@ USAGE:
 * write some css to customise your slideshow
 
 
+
 TODO / KNOWS ISSUE :
 
 * 'content' is not display yet
 * put some skin control in admin panel : size, duration, ...
 
- 
+
+Notes:
+* Sekizai block used: js, css, and ie7 (for css fix).
 
 
 	

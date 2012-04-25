@@ -108,6 +108,7 @@ div.anythingSlider .anythingWindow {
 	background: transparent;
 	display: block;
 	overflow: hidden;
+	position:relative;
 	float: left;
 	padding: 0;
 	margin: 0;

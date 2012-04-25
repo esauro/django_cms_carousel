@@ -51,13 +51,12 @@
                resizeContents: false,
                startText : "Start",
                stopText : "Stop",
-               //theme : 'minimalist-square',
                buildArrows: false,
                buildNavigation: false,
                buildStartStop: false,
                startStopped: false,
-               animationTime : 2000, 
-               delay : 5000,
+               animationTime : {{ object.speed }},
+               delay :{{ object.timeout }},
                easing : "easeInOutExpo"
         });
    });

@@ -38,12 +38,13 @@
     $().ready(function() {
         $('#carousel-{{object.name}}').codaSlider({
             autoSlide: true,
-            autoSlideInterval: 8000,
+            autoSlideInterval: {{ object.timeout }},
             autoSlideStopWhenClicked: true,
             autoHeight: false,
             dynamicArrowLeftText: "&#171;",
             dynamicArrowRightText: "&#187;",
-            dynamicTabs: false         
+            dynamicTabs: false,
+            slideEaseDuration: {{ object.speed }}
         });	
     });
 </script>

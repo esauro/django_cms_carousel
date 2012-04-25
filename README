@@ -1,34 +1,50 @@
 ===================
-django-cms-carousel beta
+django_cms_carousel beta
 ===================
 
-A anything slider integration for django-cms
-
-(http://css-tricks.com/anythingslider-jquery-plugin/)
+A multi slider integration for django-cms
 
 
 FEATURES:
 
-* sortable tab (admin)
+* multi lib support.
+* sortable tabs in admin panel.
 
 
 USAGE:
 
-* put 'django-cms-carousel' in INSTALLED-APPS in your settings.py
+* put 'django_cms_carousel' in INSTALLED-APPS in your settings.py
 * run 'python managed.py syncdb'
-* edit a page and ad a 'Carousel Plugin'
+* edit a page and add a 'Carousel Plugin'
 * write some css to customise your slideshow
 
+
+SLIDE TYPE :
+
+* Jquery.innerfade ( http://medienfreunde.com/lab/innerfade/ )
+* CodaSlider       ( http://www.ndoherty.biz/2009/10/coda-slider-2/)
+* Anything Slider  ( http://css-tricks.com/anythingslider-jquery-plugin/)
+* feel free to add yours, or request it !
+
+
+OPTIONS :
+
+{{object.speed}}
+{{object.timeout }}
+
+
+CUTOMIZE :
+
+copy/paste  "template/plugins/*.html"
+in your "template/plugins/" directory 
 
 
 TODO / KNOWS ISSUE :
 
-* 'content' is not display yet
-* put some skin control in admin panel : size, duration, ...
+* 'content' is not display yet in default templates
+* put more skin control in admin panel : size, duration, ...
 
 
 Notes:
+
 * Sekizai block used: js, css, and ie7 (for css fix).
-
-
-	

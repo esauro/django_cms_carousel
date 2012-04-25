@@ -1,0 +1,39 @@
+{% load sekizai_tags %}
+
+
+{% addtoblock "js" %}
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+{% endaddtoblock %}
+{% addtoblock "js" %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.innerfade.js"></script>
+{% endaddtoblock %}
+
+
+<div id="carousel{{object.name}}" class="ll_60 right">
+{% for tab in tabs %}
+    <div class="panel">
+        <div class="panel-wrapper">
+            <div class="center">
+                <img alt="{{ tab.image.url }}" src="{{ tab.image.url }}" />
+                <div class="panel-info">
+                    <h2>{{tab.title}}</h2>
+                    <p>{{ tab.content|safe }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+{% addtoblock "js" %}
+<script type="text/javascript">
+    $().ready(function() {
+        $('#carousel{{object.name}}').innerfade(
+            {   speed: {{ object.speed }},
+                timeout: {{ object.timeout }},
+                type: 'sequence',
+                containerheight: '1.5em'
+            });
+    });
+</script>
+{% endaddtoblock %}

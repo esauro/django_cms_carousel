@@ -3,13 +3,14 @@ from django.contrib import admin
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from models import CarouselPlugin, CarouselTab
+
 import os
 from cms.plugins.text.widgets.wymeditor_widget import WYMEditor
 from forms import CarouselTabForm
 from cms.plugins.text.settings import USE_TINYMCE
 from django.conf import settings
 from django.forms.fields import CharField
-
+from django_cms_carousel.settings import *
 
 from cms.plugins.text.utils import plugin_tags_to_user_html
 
@@ -31,10 +32,14 @@ class CarouselTabInline(admin.StackedInline):
 class CMSCarouselPlugin(CMSPluginBase):
     model = CarouselPlugin
     name = "Carousel Plugin"
-    render_template = here("templates/plugins/anythingsliders.html")
+    render_template = here("plugins/"+JSLIB_CHOICES[0][0]+".html")
     inlines = [CarouselTabInline]
     
     def render(self, context, instance, placeholder):
+        if instance and instance.jslib:
+            self.render_template ="plugins/"+instance.jslib+".html"
+        
+        
         tabs = instance.carouseltab_set.all()
         context.update({
             'tabs':tabs,

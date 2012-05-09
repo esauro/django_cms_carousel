@@ -1,0 +1,38 @@
+{% load sekizai_tags %}
+
+{% addtoblock "js" %}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap-transition.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap-caoursel.js"></script>
+{% endaddtoblock %}
+
+{% addtoblock "css" %}
+<link href="{{ STATIC_URL }}css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
+{% endaddtoblock %}
+
+<div id="myCarousel" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+        {% for tab in tabs %}
+        <div class="{% if forloop.first %}active {% endif %}item">
+            <img alt="{{ tab.image.url }}" src="{{ tab.image.url }}" />
+            <div class="carousel-caption">
+                <h4>{{tab.title}}</h4>
+                <p>{{ tab.content|safe }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+
+{% addtoblock "js" %}
+        <script type="text/javascript">
+            $('#myCarousel').carousel()
+        </script>
+{% endaddtoblock %}
+

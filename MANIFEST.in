@@ -1,3 +1,4 @@
 include AUTHORS
+include README
 recursive-include django_cms_carousel/static *
 recursive-include django_cms_carousel/templates *

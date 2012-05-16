@@ -24,7 +24,7 @@ SLIDE TYPE :
 * Jquery.innerfade ( http://medienfreunde.com/lab/innerfade/ )
 * CodaSlider       ( http://www.ndoherty.biz/2009/10/coda-slider-2/)
 * Anything Slider  ( http://css-tricks.com/anythingslider-jquery-plugin/)
-* feel free to add yours, or request it !
+* Bootstrap        ( http://twitter.github.com/bootstrap/javascript.html#carousel )
 
 
 OPTIONS :
@@ -48,3 +48,6 @@ TODO / KNOWS ISSUE :
 Notes:
 
 * Sekizai block used: js, css, and ie7 (for css fix).
+
+
+This is a fork of https://bitbucket.org/sjs/django_cms_carousel/src
